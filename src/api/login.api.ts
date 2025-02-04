@@ -11,7 +11,7 @@ export const login = async (credentials: Credentials): Promise<void> => {
       url: '/user/login', // Replace with your login API endpoint
       data: credentials,
     });
-    setCookie('jwt', response.data.token, { path: '/' });
+    setCookie('jwt', response.data.token, { path: '/', maxAge: 15 * 60 });
   } catch (error) {
     console.error('Login failed:', error);
     throw error;
