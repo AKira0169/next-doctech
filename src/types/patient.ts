@@ -1,6 +1,6 @@
 // types/patient.ts
 export interface Patient {
-  id: string;
+  _id: string;
   name: string;
   age: number;
   phoneNumber: string;
