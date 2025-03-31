@@ -23,12 +23,16 @@ export default function Login() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input type='email' placeholder='Email' {...register('email', { required: 'Email is required' })} />
-      {errors.email && <span>{errors.email.message}</span>}
-      <input type='password' placeholder='Password' {...register('password', { required: 'Password is required' })} />
-      {errors.password && <span>{errors.password.message}</span>}
-      <button type='submit'>Login</button>
-    </form>
+    <div className='container flex h-screen flex-col items-center justify-center'>
+      <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col items-center justify-center gap-5'>
+        <input className='border' type='email' placeholder='Email' {...register('email', { required: 'Email is required' })} />
+        {errors.email && <span>{errors.email.message}</span>}
+        <input className='border' type='password' placeholder='Password' {...register('password', { required: 'Password is required' })} />
+        {errors.password && <span>{errors.password.message}</span>}
+        <button className='w-[100px] border bg-slate-200 hover:bg-gray-700' type='submit'>
+          Login
+        </button>
+      </form>
+    </div>
   );
 }

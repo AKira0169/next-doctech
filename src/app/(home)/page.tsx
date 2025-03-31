@@ -11,10 +11,7 @@ const PatientsComponent = () => {
   const pageSize = 8;
 
   // Fetch data using Tanstack Query
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ['patients', page],
-    queryFn: () => getPatients(page, pageSize),
-  });
+  const { data, isLoading, isError } = useQuery({ queryKey: ['patients', page], queryFn: () => getPatients(page, pageSize) });
 
   if (isLoading) return <Loading />;
   if (isError) return <p className='text-center text-red-500'>Error fetching patients</p>;
